@@ -407,4 +407,16 @@ mesos::internal::master::Flags::Flags()
         }
         return None();
       });
+
+  add(&Flags::max_completed_tasks_per_framework,
+      "max_completed_tasks_per_framework",
+      "Maximum number of completed tasks per framework to store\n"
+      "in the cache.\n",
+	  DEFAULT_MAX_COMPLETED_TASKS_PER_FRAMEWORK,
+      [](size_t value) -> Option<Error> {
+        if (value < 1) {
+          return Error("Expected --max_completed_tasks_per_framework to be at least 1");
+        }
+        return None();
+      });
 }

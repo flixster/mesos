@@ -570,4 +570,15 @@ mesos::internal::slave::Flags::Flags()
       "about the total amount of oversubscribed resources that are allocated\n"
       "and available. The interval between updates is controlled by this flag.",
       Seconds(15));
+
+  add(&Flags::max_completed_tasks_per_executor,
+      "max_completed_tasks_per_executor",
+      "Maximum number of completed tasks per executor to store in memory.",
+	  DEFAULT_MAX_COMPLETED_TASKS_PER_EXECUTOR,
+      [](size_t value) -> Option<Error> {
+        if (value < 1) {
+          return Error("Expected --max_completed_tasks_per_executor to be at least 1");
+        }
+        return None();
+      });
 }

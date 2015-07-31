@@ -1243,7 +1243,7 @@ struct Framework
       active(true),
       registeredTime(time),
       reregisteredTime(time),
-      completedTasks(MAX_COMPLETED_TASKS_PER_FRAMEWORK) {}
+      completedTasks(master->flags.max_completed_tasks_per_framework) {}
 
   Framework(Master* const _master,
             const FrameworkInfo& _info,
@@ -1256,7 +1256,7 @@ struct Framework
       active(true),
       registeredTime(time),
       reregisteredTime(time),
-      completedTasks(MAX_COMPLETED_TASKS_PER_FRAMEWORK)
+      completedTasks(master->flags.max_completed_tasks_per_framework)
   {
     // TODO(anand): This logic needs to be invoked each
     // time the framework connects via http. Move it to

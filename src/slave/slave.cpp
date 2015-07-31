@@ -5041,7 +5041,7 @@ Executor::Executor(
     checkpoint(_checkpoint),
     pid(UPID()),
     resources(_info.resources()),
-    completedTasks(MAX_COMPLETED_TASKS_PER_EXECUTOR)
+    completedTasks(slave->flags.max_completed_tasks_per_executor)
 {
   CHECK_NOTNULL(slave);
 

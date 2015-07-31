@@ -63,6 +63,7 @@ public:
   Duration gc_delay;
   double gc_disk_headroom;
   Duration disk_watch_interval;
+  uint32_t max_completed_tasks_per_executor;
 
   // TODO(nnielsen): Deprecate resource_monitoring_interval flag after
   // Mesos 0.23.0.

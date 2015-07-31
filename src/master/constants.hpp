@@ -88,9 +88,9 @@ extern const size_t MAX_REMOVED_SLAVES;
 // TODO(thomasm): Make configurable.
 extern const uint32_t MAX_COMPLETED_FRAMEWORKS;
 
-// Maximum number of completed tasks per framework to store in the
-// cache.  TODO(thomasm): Make configurable.
-extern const uint32_t MAX_COMPLETED_TASKS_PER_FRAMEWORK;
+// Default maximum number of completed tasks per framework to store in the
+// cache.
+extern const uint32_t DEFAULT_MAX_COMPLETED_TASKS_PER_FRAMEWORK;
 
 // Time interval to check for updated watchers list.
 extern const Duration WHITELIST_WATCH_INTERVAL;

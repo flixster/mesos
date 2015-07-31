@@ -75,6 +75,7 @@ public:
   Option<std::string> hooks;
   Duration slave_ping_timeout;
   size_t max_slave_ping_timeouts;
+  uint32_t max_completed_tasks_per_framework;
 
 #ifdef WITH_NETWORK_ISOLATOR
   Option<size_t> max_executors_per_slave;
